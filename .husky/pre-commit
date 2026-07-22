@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+echo "🔒 Running local security gate..."
+
+echo ""
+echo "Running all security checks..."
+
+npm run security:all
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Security checks failed. Commit blocked."
+  exit 1
+fi
+
+echo ""
+echo "✅ Local security gate passed."

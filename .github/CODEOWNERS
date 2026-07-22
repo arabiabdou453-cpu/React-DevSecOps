@@ -1,0 +1,7 @@
+# Security and CI/CD ownership
+
+.github/workflows/* @arabiabdou453-cpu
+.github/SECURITY.md @arabiabdou453-cpu
+.github/dependabot.yml @arabiabdou453-cpu
+
+* @arabiabdou453-cpu

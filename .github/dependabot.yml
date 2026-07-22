@@ -1,0 +1,38 @@
+version: 2
+
+updates:
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+    cooldown:
+      default-days: 7
+
+    open-pull-requests-limit: 10
+
+    labels:
+      - "dependencies"
+      - "security"
+
+    commit-message:
+      prefix: "deps"
+
+
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+
+    cooldown:
+      default-days: 7
+
+    open-pull-requests-limit: 10
+
+    labels:
+      - "github-actions"
+      - "security"
+
+    commit-message:
+      prefix: "actions"
