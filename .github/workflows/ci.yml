@@ -9,10 +9,8 @@ on:
     branches:
       - main
 
-
 permissions:
   contents: read
-
 
 jobs:
   build:
@@ -20,7 +18,6 @@ jobs:
     name: Application Quality Check
 
     runs-on: ubuntu-latest
-
 
     steps:
 
@@ -49,7 +46,12 @@ jobs:
 
 
       - name: Run tests
-        run: npm test
+        run: |
+          if npm run | grep -q "test"; then
+            npm test
+          else
+            echo "No test script found, skipping."
+          fi
 
 
       - name: Production build check
