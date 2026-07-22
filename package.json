@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "echo \"No tests configured yet\"",
     "preview": "vite preview",
     "security:all": "npm run security:gitleaks && npm run security:semgrep && npm run security:npm && npm run security:trivy",
     "security:gitleaks": "gitleaks detect --source . --no-banner",
