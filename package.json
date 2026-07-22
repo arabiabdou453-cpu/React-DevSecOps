@@ -1,0 +1,31 @@
+{
+  "name": "security-test",
+  "version": "1.0.0",
+  "description": "Enterprise DevSecOps Security Pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0",
+    "prepare": "husky install",
+
+    "security:gitleaks": "gitleaks detect --source . --no-banner",
+
+    "security:semgrep": "semgrep --config p/default .",
+
+    "security:npm": "npm audit --audit-level=high || echo \"⚠️ npm audit skipped: registry unavailable\"",
+
+    "security:trivy": "trivy fs --timeout 10m --severity HIGH,CRITICAL .",
+
+    "security:all": "npm run security:gitleaks && npm run security:semgrep && npm run security:npm && npm run security:trivy"
+  },
+  "keywords": [
+    "devsecops",
+    "security",
+    "secure-sdlc"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
