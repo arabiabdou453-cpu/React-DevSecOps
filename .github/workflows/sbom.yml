@@ -32,7 +32,7 @@ jobs:
 
 
       - name: Generate SBOM
-        uses: anchore/sbom-action@df80a981bc6edbc4e220a492d3cbe9f5547a6e75
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
         with:
           format: spdx-json
           output-file: sbom.spdx.json
@@ -47,7 +47,7 @@ jobs:
 
 
       - name: Upload SBOM to Dependency Graph
-        uses: anchore/sbom-action@df80a981bc6edbc4e220a492d3cbe9f5547a6e75
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610
         with:
           format: spdx-json
           output-file: sbom.spdx.json
